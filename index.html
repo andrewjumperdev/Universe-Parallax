@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Universe</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="scene">
+        <div id="comet-container"></div>
+        <div id="comet-container1"></div>
+        <div id="comet-container2"></div>
+        <!-- Fondo lejano -->
+        <div data-depth="0.1">
+          <img src="./assets/background-stars.jpg" class="background-stars" alt="Estrellas lejanas">
+        </div>
+        <!-- Nebulosas -->
+        <div data-depth="0.3">
+          <img src="./assets/nebula.png" class="nebula" alt="Nebulosa">
+        </div>
+        <!-- Planetas -->
+        <div data-depth="0.5">
+          <img src="./assets/planet1.png" class="planet1" alt="Planeta">
+          <img src="./assets/planet2.png" class="planet2" alt="Planeta">
+          <img src="./assets/planet3.png" class="planet3" alt="Planeta">
+        </img>
+
+        <!-- Asteroides -->
+        <div data-depth="0.7">
+          <img src="./assets/asteroid.png" class="asteroid" alt="Asteroide">
+        </div>
+        <!-- Naves espaciales -->
+        <div data-depth="1.0">
+          <img src="./assets/spaceship.png" class="spaceship" alt="Nave espacial">
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+      <script src="script.js"></script>
+</body>
+</html>

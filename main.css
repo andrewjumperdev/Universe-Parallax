@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #060316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./assets/background-stars.jpg') no-repeat center center fixed;
+  }
+
+  .background-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./assets/background-stars.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    transition: transform 0.5s ease;
+  }
+
+
+  @media (orientation: portrait) {
+    .background-stars {
+        display: none;
+    }
+  }
+  
+  @media (orientation: landscape) {
+    .background-stars {
+      transform: rotate(0deg);
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
+  #scene {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  #scene div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #scene img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+  }
+
+  
+  .planet1 {
+    animation: orbit 8s linear infinite;
+    z-index: 1;
+    width: 20vw;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .planet2 {
+    animation: orbit 20s linear infinite;
+    z-index: 1;
+    width: 15vw;
+    top: 25%;
+    left: 30%;
+  }
+
+  .planet3 {
+    width: 8vw;
+    animation: orbit 20s linear infinite;
+  }
+  
+  .spaceship {
+    width: 5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveSpaceship 100s linear infinite;
+  }
+
+  @keyframes moveSpaceship {
+    0% {
+      transform: translate(-50%, -50%) translate(0, 0);
+    }
+    25% {
+      transform: translate(-50%, -50%) translate(50vw, 0);
+    }
+    50% {
+      transform: translate(-50%, -50%) translate(50vw, 50vh);
+    }
+    75% {
+      transform: translate(-50%, -50%) translate(0, 50vh);
+    }
+    100% {
+      transform: translate(-50%, -50%) translate(0, 0);
+    }
+  }
+  
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  #comet-container {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100wh;
+    height: 100vh;
+    pointer-events: none;
+  }
+  
+  .comet {
+    position: absolute;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    animation: cometAnimation 5s linear infinite;
+  }
+
+  @keyframes cometAnimation {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(200vw, 100vh);
+      opacity: 0;
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+
+    #comet-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100wh;
+        height: 100vh;
+        pointer-events: none;
+      }
+      
+      .comet {
+        position: absolute;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        opacity: 0;
+        animation: cometAnimation 5s linear infinite;
+      }
+
+      @keyframes cometAnimation {
+        0% {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(200vw, 100vh);
+          opacity: 0;
+        }
+      }
+    .nebula {
+        filter: blur(1px);
+        z-index: 2;
+        width: 100vw;
+        top: 2%;
+        left: 40%;
+        transform: translateX(-50%);
+    }
+
+    .planet1 {
+        filter: blur(1px);
+        z-index: 2;
+        width: 30vw;
+        top: 6%;
+        left: 20%;
+        transform: translateX(-50%);
+      }
+      .planet2 {
+        z-index: 15;
+        width: 700vw;
+        top: 7%;
+        left: 10%;
+        transform: translateX(-50%);
+      }
+
+      .planet3 {
+        z-index: 5;
+        width: 70vw;
+        top: 65%;
+        left: 10%;
+        transform: translateX(-50%);
+      }
+
+      .spaceship {
+        z-index: 15;
+        width: 80vw;
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+      }
+
+      .asteroid {
+        z-index: 10;
+        width: 800vw;
+        position: absolute;
+        top: 70%;
+        left: 60%;
+        transform: translate(-50%, -10%);
+      }
+      
+  }
